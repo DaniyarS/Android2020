@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private int secondNumberIndex;
 
     private char currentOp;
+    private boolean opState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,16 +156,17 @@ public class MainActivity extends AppCompatActivity {
                                 secondNumber += firstNumber;
                                 calculatorScreen.setText(String.valueOf(secondNumber));
                             }
+
                         }
-                        else if (isOpPressed){
+                        if (isOpPressed){
                             if (currentOp == '-'){
                                 String screenNextContent = calculatorScreen.getText().toString();
                                 secondNumber = Double.parseDouble(screenNextContent.substring(secondNumberIndex, screenNextContent.length()));
-                                secondNumber -= firstNumber;
-                                calculatorScreen.setText(String.valueOf(secondNumber));
+                                double result = firstNumber - secondNumber;
+                                calculatorScreen.setText(String.valueOf(result));
                             }
                         }
-                        else if (isOpPressed){
+                        if (isOpPressed){
                             if (currentOp == '×'){
                                 String screenNextContent = calculatorScreen.getText().toString();
                                 secondNumber = Double.parseDouble(screenNextContent.substring(secondNumberIndex, screenNextContent.length()));
@@ -172,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                                 calculatorScreen.setText(String.valueOf(result));
                             }
                         }
-                        else if (isOpPressed){
+                        if (isOpPressed){
                             if (currentOp == '÷'){
                                 String screenNextContent = calculatorScreen.getText().toString();
                                 secondNumber = Double.parseDouble(screenNextContent.substring(secondNumberIndex, screenNextContent.length()));
@@ -181,21 +183,21 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
 
-                        else if (isOpPressed){
+                        if (isOpPressed){
                             if (currentOp == '√'){
                                 double result = Math.sqrt(firstNumber);
                                 calculatorScreen.setText(String.valueOf(result));
                             }
                         }
 
-                        else if (isOpPressed){
+                        if (isOpPressed){
                             if (currentOp == '%'){
                                 double result = Math.sqrt(firstNumber);
                                 calculatorScreen.setText(String.valueOf(result));
                             }
                         }
 
-                        else if (isOpPressed){
+                        if (isOpPressed){
                             if (currentOp == '^'){
                                 String screenNextContent = calculatorScreen.getText().toString();
                                 secondNumber = Double.parseDouble(screenNextContent.substring(secondNumberIndex, screenNextContent.length()));
