@@ -2,6 +2,7 @@ package com.example.calculator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,6 +15,294 @@ public class MainActivity extends AppCompatActivity {
     TextView text;
     */
 
+    String operation;
+    String num1;
+    String num2;
+    String dot;
+    double number1;
+    double number2;
+    double output;
+    String out;
+    CharSequence dooot;
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        operation = "";
+        num2 = "";
+        dot = "";
+        number1 = 0;
+        number2 = 0;
+        output = 0;
+        out = "";
+        dooot = ".";
+    }
+
+    public void pressEquals(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (operation.equals("/")) {
+                tv.setTextColor(Color.rgb(255,255,255));
+                num2 = tv.getText().toString();
+                number1 = Double.parseDouble(num1);
+                number2 = Double.parseDouble(num2);
+                if (number2 == 0 || number1 == 0){
+                    tv.setTextColor(Color.rgb(249, 174, 171));
+                    tv.setText("На 0 делить нельзя");
+                }
+                else {
+                    tv.setTextColor(Color.rgb(255,255,255));
+                    output = number1 / number2;
+                    out = String.valueOf(output);
+                    tv.setText(out);
+                    operation = "";
+                }
+            }
+
+            if (operation.equals("+")) {
+                if (tv.equals("На 0 делить нельзя")) {
+                    tv.setText("");
+                } else {
+                    tv.setTextColor(Color.rgb(255, 255, 255));
+                    num2 = tv.getText().toString();
+                    number1 = Double.parseDouble(num1);
+                    number2 = Double.parseDouble(num2);
+                    output = number1 + number2;
+                    out = String.valueOf(output);
+                    tv.setText(out);
+                    operation = "";
+                }
+            }
+            if (operation.equals("-")) {
+                if (tv.equals("На 0 делить нельзя")) {
+                    tv.setText("");
+                } else {
+                    tv.setTextColor(Color.rgb(255, 255, 255));
+                    num2 = tv.getText().toString();
+                    number1 = Double.parseDouble(num1);
+                    number2 = Double.parseDouble(num2);
+                    output = number1 - number2;
+                    out = String.valueOf(output);
+                    tv.setText(out);
+                    operation = "";
+                }
+            }
+            if (operation.equals("*")) {
+                if (tv.equals("На 0 делить нельзя")) {
+                    tv.setText("");
+                } else {
+                    tv.setTextColor(Color.rgb(255, 255, 255));
+                    num2 = tv.getText().toString();
+                    number1 = Double.parseDouble(num1);
+                    number2 = Double.parseDouble(num2);
+                    output = number1 * number2;
+                    out = String.valueOf(output);
+                    tv.setText(out);
+                    operation = "";
+                }
+            }
+        }
+    }
+
+    public void pressDiv(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            } else {
+                tv.setTextColor(Color.rgb(255, 255, 255));
+                num1 = tv.getText().toString();
+                tv.setText("");
+                operation = "/";
+            }
+        }
+    }
+
+    public void pressSqrt(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            } else {
+                tv.setTextColor(Color.rgb(255, 255, 255));
+                num1 = tv.getText().toString();
+                number1 = Double.parseDouble(num1);
+                output = Math.sqrt(number1);
+                tv.setText("");
+                out = String.valueOf(output);
+                tv.append(out);
+            }
+        }
+    }
+
+    public void pressDouble(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            } else {
+                tv.setTextColor(Color.rgb(255, 255, 255));
+                num1 = tv.getText().toString();
+                number1 = Double.parseDouble(num1);
+                output = number1 * number1;
+                tv.setText("");
+                out = String.valueOf(output);
+                tv.append(out);
+            }
+        }
+    }
+
+    public void onClick(View view) {
+        TextView tv = (TextView) view;
+        TextView infoTextView = findViewById(R.id.text);
+        if (tv.equals("На 0 делить нельзя")){
+            tv.setText("");
+            infoTextView.setText("");
+        }
+        else{
+            String text = infoTextView.getText().toString();
+            String s = tv.getText().toString();
+            tv.setTextColor(Color.rgb(255,255,255));
+            if (text.equals("0")) infoTextView.setText(s);
+            else infoTextView.append(s);
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void pressDot (View view){
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            } else if
+            (!s.contains(dooot))
+            tv.append(".");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public void pressZero(View view) {
+        TextView infoTextView = findViewById(R.id.text);
+        String text = infoTextView.getText().toString();
+        if (!text.equals("0")) {
+            if (infoTextView.equals("На 0 делить нельзя")) {
+                infoTextView.setText("");
+            } else {
+                infoTextView.setTextColor(Color.rgb(255, 255, 255));
+                infoTextView.append("0");
+            }
+        }
+    }
+
+    public void clearAll(View view) {
+        TextView tv = findViewById(R.id.text);
+        tv.setTextColor(Color.rgb(255,255,255));
+        tv.setText("");
+    }
+
+    public void delete(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            } else {
+                tv.setTextColor(Color.rgb(255, 255, 255));
+                s = s.substring(0, s.length() - 1);
+                tv.setText(s);
+            }
+        }
+    }
+
+    public void pressPlus(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            }
+            else
+            {
+                tv.setTextColor(Color.rgb(255, 255, 255));
+                num1 = tv.getText().toString();
+                tv.setText("");
+                operation = "+";
+            }
+        }
+    }
+
+    public void pressMinus(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            } else {
+                tv.setTextColor(Color.rgb(255, 255, 255));
+                num1 = tv.getText().toString();
+                tv.setText("");
+                operation = "-";
+            }
+        }
+    }
+
+    public void pressMulti(View view) {
+        TextView tv = findViewById(R.id.text);
+        String s = tv.getText().toString();
+        if (!s.equals("")) {
+            if (tv.equals("На 0 делить нельзя")) {
+                tv.setText("");
+            } else {
+                tv.setTextColor(Color.rgb(255, 255, 255));
+                num1 = tv.getText().toString();
+                tv.setText("");
+                operation = "*";
+            }
+        }
+    }
+}
+/*
     private boolean isOpPressed = false;
 
     private double firstNumber;
@@ -23,11 +312,16 @@ public class MainActivity extends AppCompatActivity {
 
     private char currentOp;
     private boolean opState;
+    private boolean buttonState;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        */
+
+        /*
 
         final TextView calculatorScreen = findViewById(R.id.text);
         final Button zero = findViewById(R.id.zero);
@@ -88,7 +382,10 @@ public class MainActivity extends AppCompatActivity {
                         calculatorScreen.append("9");
                         break;
                     case R.id.dot:
-                        calculatorScreen.append(",");
+                        calculatorScreen.append(".");
+
+
+
                         break;
                     case R.id.plus:
                         String screenContent0 = calculatorScreen.getText().toString();
@@ -102,7 +399,11 @@ public class MainActivity extends AppCompatActivity {
                         String screenContent1 = calculatorScreen.getText().toString();
                         secondNumberIndex = screenContent1.length()+1;
                         firstNumber = Double.parseDouble(screenContent1);
-                        calculatorScreen.append("-");
+                        if (!calculatorScreen.toString().contains("-")){
+                            calculatorScreen.append("");
+                        }
+                        else
+                            calculatorScreen.append("-");
                         isOpPressed = true;
                         currentOp = '-';
                         break;
@@ -110,7 +411,11 @@ public class MainActivity extends AppCompatActivity {
                         String screenContent2 = calculatorScreen.getText().toString();
                         secondNumberIndex = screenContent2.length()+1;
                         firstNumber = Double.parseDouble(screenContent2);
-                        calculatorScreen.append("×");
+                        if (!calculatorScreen.toString().contains("×")){
+                            calculatorScreen.append("");
+                        }
+                        else
+                            calculatorScreen.append("×");
                         isOpPressed = true;
                         currentOp = '×';
                         break;
@@ -118,6 +423,10 @@ public class MainActivity extends AppCompatActivity {
                         String screenContent3 = calculatorScreen.getText().toString();
                         secondNumberIndex = screenContent3.length()+1;
                         firstNumber = Double.parseDouble(screenContent3);
+                        if (!calculatorScreen.toString().contains("÷")){
+                            calculatorScreen.append("");
+                        }
+                        else
                         calculatorScreen.append("÷");
                         isOpPressed = true;
                         currentOp = '÷';
@@ -127,9 +436,14 @@ public class MainActivity extends AppCompatActivity {
                         String screenContent4 = calculatorScreen.getText().toString();
                         secondNumberIndex = screenContent4.length()+1;
                         firstNumber = Double.parseDouble(screenContent4);
-                        calculatorScreen.append("√");
-                        isOpPressed = true;
-                        currentOp = '√';
+                        if (!calculatorScreen.toString().contains("√")){
+                            calculatorScreen.append("√");
+                            isOpPressed = true;
+                            currentOp = '√';
+                            break;
+                        }
+                        else
+                        calculatorScreen.append("");
                         break;
                     case R.id.percent:
                         String screenContent5 = calculatorScreen.getText().toString();
@@ -143,6 +457,10 @@ public class MainActivity extends AppCompatActivity {
                         String screenContent6 = calculatorScreen.getText().toString();
                         secondNumberIndex = screenContent6.length()+1;
                         firstNumber = Double.parseDouble(screenContent6);
+                        if (!calculatorScreen.toString().contains("^")){
+                            calculatorScreen.append("");
+                        }
+                        else
                         calculatorScreen.append("^");
                         isOpPressed = true;
                         currentOp = '^';
@@ -252,7 +570,7 @@ public class MainActivity extends AppCompatActivity {
                 calculatorScreen.setText("");
             }
         });
-
+        */
 
 
         /*int[] numbers = new int[]{
@@ -308,7 +626,3 @@ public class MainActivity extends AppCompatActivity {
         for (int i = 0; i < operationButs.length; i++) {
             findViewById(operationButs[i]).setOnClickListener((actionButtonClickListener));
         }*/
-
-
-    }
-}

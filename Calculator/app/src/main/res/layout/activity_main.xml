@@ -36,20 +36,11 @@
             android:layout_weight="1"
             android:background="#174FA6"
             android:text="√"
-            android:textColor="#FFFFFF">
+            android:textColor="#FFFFFF"
+            android:onClick="pressSqrt">
 
         </Button>
 
-        <Button
-            android:id="@+id/percent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="#174FA6"
-            android:text="%"
-            android:textColor="#FFFFFF">
-
-        </Button>
 
         <Button
             android:id="@+id/exp"
@@ -57,7 +48,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#174FA6"
-            android:text="m^n"
+            android:onClick="pressDouble"
+            android:text="m^2"
             android:textColor="#FFFFFF">
 
         </Button>
@@ -89,19 +81,22 @@
                     style="@style/calc_button"
                     android:layout_height="match_parent"
                     android:text="7"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
 
                 <Button
                     android:id="@+id/eight"
                     style="@style/calc_button"
                     android:text="8"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
 
                 <Button
                     android:id="@+id/nine"
                     style="@style/calc_button"
                     android:text="9"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
             </LinearLayout>
 
             <LinearLayout
@@ -114,19 +109,22 @@
                     android:id="@+id/four"
                     style="@style/calc_button"
                     android:text="4"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
 
                 <Button
                     android:id="@+id/five"
                     style="@style/calc_button"
                     android:text="5"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
 
                 <Button
                     android:id="@+id/six"
                     style="@style/calc_button"
                     android:text="6"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
             </LinearLayout>
 
             <LinearLayout
@@ -139,19 +137,22 @@
                     android:id="@+id/one"
                     style="@style/calc_button"
                     android:text="1"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
 
                 <Button
                     android:id="@+id/two"
                     style="@style/calc_button"
                     android:text="2"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
 
                 <Button
                     android:id="@+id/three"
                     style="@style/calc_button"
                     android:text="3"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="onClick"></Button>
             </LinearLayout>
 
             <LinearLayout
@@ -164,19 +165,22 @@
                     android:id="@+id/zero"
                     style="@style/calc_button"
                     android:text="0"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="pressZero"></Button>
 
                 <Button
                     android:id="@+id/dot"
                     style="@style/calc_button"
                     android:text=","
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="pressDot"></Button>
 
                 <Button
                     android:id="@+id/equal"
                     style="@style/calc_button"
                     android:text="="
-                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"></Button>
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:onClick="pressEquals"></Button>
             </LinearLayout>
 
 
@@ -190,32 +194,38 @@
             <Button
                 android:id="@+id/del"
                 style="@style/operation_button"
-                android:text="C"></Button>
+                android:text="C"
+                android:onClick="delete"></Button>
 
             <Button
                 android:id="@+id/delAll"
                 style="@style/operation_button"
-                android:text="AC"></Button>
+                android:onClick="clearAll"
+                android:text="CE"></Button>
 
             <Button
                 android:id="@+id/division"
                 style="@style/operation_button"
-                android:text="÷"></Button>
+                android:text="÷"
+                android:onClick="pressDiv"></Button>
 
             <Button
                 android:id="@+id/multiplication"
                 style="@style/operation_button"
-                android:text="×"></Button>
+                android:text="×"
+                android:onClick="pressMulti"></Button>
 
             <Button
                 android:id="@+id/minus"
                 style="@style/operation_button"
-                android:text="-"></Button>
+                android:text="-"
+                android:onClick="pressMinus"></Button>
 
             <Button
                 android:id="@+id/plus"
                 style="@style/operation_button"
-                android:text="+"></Button>
+                android:text="+"
+                android:onClick="pressPlus"></Button>
         </LinearLayout>
 
     </LinearLayout>
