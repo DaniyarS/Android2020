@@ -24,12 +24,12 @@
                 android:layout_height="16dp"
                 android:layout_marginTop="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/imageView3"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintStart_toStartOf="@+id/ivPost"
+                app:layout_constraintTop_toBottomOf="@+id/ivPost"
                 tools:srcCompat="@drawable/ic_like" />
 
             <TextView
-                android:id="@+id/tvViews"
+                android:id="@+id/tvComment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -44,17 +44,17 @@
                 android:layout_height="16dp"
                 android:layout_marginStart="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/ivRating"
-                app:layout_constraintStart_toEndOf="@+id/tvRating"
+                app:layout_constraintStart_toEndOf="@+id/tvLikes"
                 app:layout_constraintTop_toTopOf="@+id/ivRating"
                 tools:srcCompat="@drawable/ic_comment" />
 
             <ImageView
-                android:id="@+id/ivComments"
+                android:id="@+id/ivShare"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
                 android:layout_marginStart="16dp"
                 app:layout_constraintBottom_toBottomOf="@+id/ivRating"
-                app:layout_constraintStart_toEndOf="@+id/tvViews"
+                app:layout_constraintStart_toEndOf="@+id/tvComment"
                 app:layout_constraintTop_toTopOf="@+id/ivRating"
                 tools:srcCompat="@drawable/ic_share" />
 
@@ -64,13 +64,13 @@
                 android:layout_height="16dp"
                 android:layout_marginStart="104dp"
                 app:layout_constraintBottom_toBottomOf="@+id/ivRating"
-                app:layout_constraintStart_toEndOf="@+id/ivComments"
+                app:layout_constraintStart_toEndOf="@+id/ivShare"
                 app:layout_constraintTop_toTopOf="@+id/ivRating"
                 app:layout_constraintVertical_bias="0.0"
                 tools:srcCompat="@drawable/ic_eye" />
 
             <TextView
-                android:id="@+id/tvRating"
+                android:id="@+id/tvLikes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -80,19 +80,19 @@
                 app:layout_constraintTop_toTopOf="@+id/ivRating" />
 
             <TextView
-                android:id="@+id/tvComments"
+                android:id="@+id/tvViews"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="@+id/ivComments"
-                app:layout_constraintEnd_toEndOf="@+id/imageView3"
+                app:layout_constraintBottom_toBottomOf="@+id/ivShare"
+                app:layout_constraintEnd_toEndOf="@+id/ivPost"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/ivComments2"
-                app:layout_constraintTop_toTopOf="@+id/ivComments"
+                app:layout_constraintTop_toTopOf="@+id/ivShare"
                 app:layout_constraintVertical_bias="1.0" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/ivGroupPhoto"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="16dp"
@@ -102,26 +102,26 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/nameOfGroup"
+                android:id="@+id/tvGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="TextView"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
-                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                app:layout_constraintStart_toEndOf="@+id/ivGroupPhoto"
+                app:layout_constraintTop_toTopOf="@+id/ivGroupPhoto" />
 
             <TextView
-                android:id="@+id/timeOfPost"
+                android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                app:layout_constraintStart_toStartOf="@+id/nameOfGroup"
-                app:layout_constraintTop_toBottomOf="@+id/nameOfGroup" />
+                app:layout_constraintBottom_toBottomOf="@+id/ivGroupPhoto"
+                app:layout_constraintStart_toStartOf="@+id/tvGroup"
+                app:layout_constraintTop_toBottomOf="@+id/tvGroup" />
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/btMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
@@ -132,30 +132,30 @@
                 android:paddingBottom="0dp"
                 android:src="@drawable/ic_more_vert_black_24dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/nameOfGroup">
+                app:layout_constraintTop_toTopOf="@+id/tvGroup">
 
             </ImageButton>
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tvHeading"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="TextView"
-                app:layout_constraintEnd_toEndOf="@+id/imageButton"
-                app:layout_constraintStart_toStartOf="@+id/imageView"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintEnd_toEndOf="@+id/btMenu"
+                app:layout_constraintStart_toStartOf="@+id/ivGroupPhoto"
+                app:layout_constraintTop_toBottomOf="@+id/ivGroupPhoto" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/ivPost"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/textView3"
+                app:layout_constraintEnd_toEndOf="@+id/tvHeading"
                 app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="@+id/textView3"
-                app:layout_constraintTop_toBottomOf="@+id/textView3"
+                app:layout_constraintStart_toStartOf="@+id/tvHeading"
+                app:layout_constraintTop_toBottomOf="@+id/tvHeading"
                 app:layout_constraintVertical_bias="1.0"
                 tools:srcCompat="@tools:sample/avatars[3]" />
 

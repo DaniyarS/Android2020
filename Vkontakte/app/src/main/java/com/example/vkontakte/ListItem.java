@@ -4,13 +4,13 @@ import java.util.Date;
 
 public class ListItem {
     private String groupName;
-    private Date publishDate;
+    private String publishDate;
     private String heading;
     private String likes;
     private String comments;
     private String views;
 
-    public ListItem(String groupName, Date publishDate, String heading, String likes, String comments, String views) {
+    public ListItem(String groupName, String publishDate, String heading, String likes, String comments, String views) {
         this.groupName = groupName;
         this.publishDate = publishDate;
         this.heading = heading;
@@ -23,7 +23,7 @@ public class ListItem {
         return groupName;
     }
 
-    public Date getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
 
