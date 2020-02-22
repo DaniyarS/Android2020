@@ -12,6 +12,8 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,6 +28,16 @@ public class MainActivity extends AppCompatActivity {
 
     private List<ListItem> listItems;
 
+    private int[] images = {R.drawable.pic1,
+            R.drawable.pic2,
+            R.drawable.pic3,
+            R.drawable.pic4,
+            R.drawable.pic5,
+            R.drawable.pic6,
+            R.drawable.pic7,
+            R.drawable.pic8,
+            R.drawable.pic9,
+            R.drawable.pic10};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,11 +54,12 @@ public class MainActivity extends AppCompatActivity {
 
             ListItem listItem = new ListItem(
                     "heading " + i+1,
-                    i+1 + " минут назад",
+                    i+5 + " минут назад",
                     "heading ",
                     "122 ",
                     "22 ",
-                    "1000 "
+                    "1000 ",
+                    "c"
             );
 
             listItems.add(listItem);

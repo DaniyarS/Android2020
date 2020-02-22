@@ -10,23 +10,15 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:id="@+id/ivRating"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginTop="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/ivPost"
-                app:layout_constraintTop_toBottomOf="@+id/ivPost"
-                tools:srcCompat="@drawable/ic_like" />
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
 
             <TextView
                 android:id="@+id/tvComment"
@@ -34,50 +26,59 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="TextView"
+                android:textAlignment="viewEnd"
                 app:layout_constraintBottom_toBottomOf="@+id/ivViews"
                 app:layout_constraintStart_toEndOf="@+id/ivViews"
                 app:layout_constraintTop_toTopOf="@+id/ivViews" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/ivViews"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                style="@android:style/Widget.DeviceDefault.ImageButton"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivRating"
+                android:background="@drawable/ic_comment"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/iblike"
                 app:layout_constraintStart_toEndOf="@+id/tvLikes"
-                app:layout_constraintTop_toTopOf="@+id/ivRating"
-                tools:srcCompat="@drawable/ic_comment" />
+                app:layout_constraintTop_toTopOf="@+id/iblike"
+                tools:visibility="visible" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/ivShare"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
+                android:layout_width="30dp"
+                android:layout_height="25dp"
                 android:layout_marginStart="16dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivRating"
+                android:background="@drawable/ic_share"
+                android:src="@drawable/ic_share"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/ivViews"
                 app:layout_constraintStart_toEndOf="@+id/tvComment"
-                app:layout_constraintTop_toTopOf="@+id/ivRating"
-                tools:srcCompat="@drawable/ic_share" />
+                app:layout_constraintTop_toTopOf="@+id/ivViews"
+                tools:srcCompat="@drawable/ic_share"
+                tools:visibility="visible" />
 
-            <ImageView
-                android:id="@+id/ivComments2"
-                android:layout_width="16dp"
-                android:layout_height="16dp"
-                android:layout_marginStart="104dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivRating"
+            <ImageButton
+                android:id="@+id/ivView"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="50dp"
+                android:background="@drawable/ic_eye"
+                android:src="@drawable/ic_eye"
+                app:layout_constraintBottom_toBottomOf="@+id/tvViews"
+                app:layout_constraintEnd_toEndOf="@+id/ivPost"
                 app:layout_constraintStart_toEndOf="@+id/ivShare"
-                app:layout_constraintTop_toTopOf="@+id/ivRating"
-                app:layout_constraintVertical_bias="0.0"
-                tools:srcCompat="@drawable/ic_eye" />
+                app:layout_constraintTop_toTopOf="@+id/iblike" />
 
             <TextView
                 android:id="@+id/tvLikes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
+                android:layout_marginLeft="4dp"
                 android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="@+id/ivRating"
-                app:layout_constraintStart_toEndOf="@+id/ivRating"
-                app:layout_constraintTop_toTopOf="@+id/ivRating" />
+                app:layout_constraintBottom_toBottomOf="@+id/iblike"
+                app:layout_constraintStart_toEndOf="@+id/iblike"
+                app:layout_constraintTop_toTopOf="@+id/iblike" />
 
             <TextView
                 android:id="@+id/tvViews"
@@ -86,12 +87,11 @@
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="@+id/ivShare"
                 app:layout_constraintEnd_toEndOf="@+id/ivPost"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/ivComments2"
-                app:layout_constraintTop_toTopOf="@+id/ivShare"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintHorizontal_bias="0.177"
+                app:layout_constraintStart_toEndOf="@+id/ivView"
+                app:layout_constraintTop_toTopOf="@+id/ivShare" />
 
-            <ImageView
+            <ImageButton
                 android:id="@+id/ivGroupPhoto"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -107,6 +107,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#5281B9"
                 app:layout_constraintStart_toEndOf="@+id/ivGroupPhoto"
                 app:layout_constraintTop_toTopOf="@+id/ivGroupPhoto" />
 
@@ -126,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
                 android:backgroundTint="#FFFFFF"
+                android:padding="0dp"
                 android:paddingLeft="0dp"
                 android:paddingTop="0dp"
                 android:paddingRight="0dp"
@@ -150,7 +153,7 @@
                 android:id="@+id/ivPost"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvHeading"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -158,6 +161,18 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvHeading"
                 app:layout_constraintVertical_bias="1.0"
                 tools:srcCompat="@tools:sample/avatars[3]" />
+
+            <ImageButton
+                android:id="@+id/iblike"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/ic_like"
+                android:scaleType="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ivPost"
+                app:layout_constraintTop_toBottomOf="@+id/ivPost"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
