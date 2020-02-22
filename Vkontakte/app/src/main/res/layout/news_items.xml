@@ -8,6 +8,7 @@
     android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
@@ -27,6 +28,8 @@
                 android:layout_marginStart="4dp"
                 android:text="TextView"
                 android:textAlignment="viewEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#95999D"
                 app:layout_constraintBottom_toBottomOf="@+id/ivViews"
                 app:layout_constraintStart_toEndOf="@+id/ivViews"
                 app:layout_constraintTop_toTopOf="@+id/ivViews" />
@@ -76,6 +79,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="4dp"
                 android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#95999D"
                 app:layout_constraintBottom_toBottomOf="@+id/iblike"
                 app:layout_constraintStart_toEndOf="@+id/iblike"
                 app:layout_constraintTop_toTopOf="@+id/iblike" />
@@ -85,6 +90,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#95999D"
                 app:layout_constraintBottom_toBottomOf="@+id/ivShare"
                 app:layout_constraintEnd_toEndOf="@+id/ivPost"
                 app:layout_constraintHorizontal_bias="0.177"
@@ -97,6 +104,7 @@
                 android:layout_height="40dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -154,6 +162,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:scaleType="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/tvHeading"
                 app:layout_constraintHorizontal_bias="0.498"
