@@ -34,34 +34,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-//        recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager( new LinearLayoutManager(this));
-//
-//        listItems = new ArrayList<>();
-//
-//        for (int i = 0; i < 10; i++){
-//
-//            ListItem listItem = new ListItem(
-//                    "heading " + i+1,
-//                    i+5 + " минут назад",
-//                    "heading ",
-//                    "122 ",
-//                    "22 ",
-//                    "1000 ",
-//                    "c"
-//            );
-//
-//            listItems.add(listItem);
-//        }
-//
-//        adapter = new ListAdapter(listItems, this);
-//
-//        recyclerView.setAdapter(adapter);
-
-        //NEW CODE
-
-
         myContext = this;
 
         recyclerViewStart();
@@ -82,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 String title = jo_inside.getString("title");
                 String likes = jo_inside.getString("likes");
                 String comments = jo_inside.getString("comments");
+                String shares = jo_inside.getString("shares");
                 String views = jo_inside.getString("views");
                 String imgURL = jo_inside.getString("gImage");
 
@@ -92,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 ls.setHeading(title);
                 ls.setLikes(likes);
                 ls.setComments(comments);
+                ls.setShares(shares);
                 ls.setViews(views);
                 ls.setImgURL(imgURL);
 

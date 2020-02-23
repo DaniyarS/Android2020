@@ -9,14 +9,14 @@ public class ListItem {
     private String comments;
     private String views;
     private String imgURL;
-    private String imgURLg;
+    private String shares;
 
-    public String getImgURLg() {
-        return imgURLg;
+    public String getShares() {
+        return shares;
     }
 
-    public void setImgURLg(String imgURLg) {
-        this.imgURLg = imgURLg;
+    public void setShares(String shares) {
+        this.shares = shares;
     }
 //    public ListItem(String groupName, String publishDate, String heading, String likes, String comments, String views, String imgURL) {
 //        this.groupName = groupName;

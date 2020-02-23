@@ -6,6 +6,7 @@
         "title": "Супергерой комиксов, которые выпускаются компанией DC Comics.",
         "likes": "112",
         "comments": "50",
+        "shares": "20",
         "views": "20" 
     },
     {
@@ -15,6 +16,7 @@
         "title": "Cape breton lighthouse. ",
         "likes": "1240",
         "comments": "250",
+        "shares": "25",
         "views": "5000" 
     },
     {
@@ -24,6 +26,7 @@
         "title": "A superhero is a heroic stock character, typically possessing supernatural or superhuman powers, who is dedicated to fighting the evil of their universe, protecting the public, and battling super-villains. A female superhero is sometimes called a superheroine, although the word superhero is also commonly used for females.",
         "likes": "1240",
         "comments": "250",
+        "shares": "28",
         "views": "5000" 
     },
     {
@@ -33,6 +36,7 @@
         "title": "Апокалипсис",
         "likes": "471",
         "comments": "25",
+        "shares": "28",
         "views": "1500" 
     },
     {
@@ -42,6 +46,7 @@
         "title": "Политические новости 24/7",
         "likes": "5001",
         "comments": "570",
+        "shares": "3",
         "views": "11000" 
     },
     {
@@ -51,6 +56,7 @@
         "title": "He is have... ",
         "likes": "12",
         "comments": "25",
+        "shares": "87",
         "views": "50" 
     },
     {
@@ -60,6 +66,7 @@
         "title": "Audi bla80",
         "likes": "124",
         "comments": "250",
+        "shares": "85",
         "views": "500" 
     },
     {
@@ -69,6 +76,7 @@
         "title": "Дональд Трамп заявил что на территории Чеченской Республики нет ни одного покемона",
         "likes": "5240",
         "comments": "250",
+        "shares": "81",
         "views": "6000" 
     },
     {
@@ -78,6 +86,7 @@
         "title": "Прекрасный пейзаж ",
         "likes": "40",
         "comments": "2",
+        "shares": "47",
         "views": "500" 
     },
     {
@@ -87,6 +96,7 @@
         "title": "Неймар может завершить карьеру.",
         "likes": "250",
         "comments": "1250",
+        "shares": "11",
         "views": "5000" 
     }
     ]

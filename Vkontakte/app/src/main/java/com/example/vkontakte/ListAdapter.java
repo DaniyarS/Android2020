@@ -43,6 +43,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         holder.tvComments.setText(listItem.getComments());
         holder.tvViews.setText(listItem.getViews());
         holder.tvTime.setText(listItem.getPublishDate());
+        holder.tvShares.setText(listItem.getShares());
 
         Picasso.with(context)
         .load(listItem.getImgURL())
@@ -79,9 +80,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         public TextView tvHeading;
         public TextView tvLikes;
         public TextView tvComments;
+        public TextView tvShares;
         public TextView tvViews;
         public ImageView ivPost;
-        public ImageButton ivGroupPhoto;
+        public ImageView ivGroupPhoto;
         public CardView cardView;
         public ImageButton iblikes;
 
@@ -96,9 +98,10 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             tvComments = (TextView) itemView.findViewById(R.id.tvComment);
             tvViews = (TextView) itemView.findViewById(R.id.tvViews);
             ivPost = (ImageView) itemView.findViewById(R.id.ivPost);
-            ivGroupPhoto = (ImageButton) itemView.findViewById(R.id.ivGroupPhoto);
+            ivGroupPhoto = (ImageView) itemView.findViewById(R.id.ivGroupPhoto);
             cardView = (CardView) itemView.findViewById(R.id.cardView);
             iblikes = (ImageButton) itemView.findViewById(R.id.iblike);
+            tvShares = (TextView) itemView.findViewById(R.id.tvShare);
         }
     }
 }

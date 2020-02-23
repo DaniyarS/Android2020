@@ -70,8 +70,10 @@
                 android:src="@drawable/ic_eye"
                 app:layout_constraintBottom_toBottomOf="@+id/tvViews"
                 app:layout_constraintEnd_toEndOf="@+id/ivPost"
+                app:layout_constraintHorizontal_bias="0.854"
                 app:layout_constraintStart_toEndOf="@+id/ivShare"
-                app:layout_constraintTop_toTopOf="@+id/iblike" />
+                app:layout_constraintTop_toTopOf="@+id/iblike"
+                app:layout_constraintVertical_bias="1.0" />
 
             <TextView
                 android:id="@+id/tvLikes"
@@ -98,7 +100,7 @@
                 app:layout_constraintStart_toEndOf="@+id/ivView"
                 app:layout_constraintTop_toTopOf="@+id/ivShare" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
+            <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/ivGroupPhoto"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -107,9 +109,7 @@
                 android:scaleType="centerCrop"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars"
-
-                />
+                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/tvGroup"
@@ -191,9 +191,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:text="TextView"
-                app:layout_constraintBottom_toBottomOf="@+id/tvComment"
+                app:layout_constraintBottom_toBottomOf="@+id/ivViews"
                 app:layout_constraintStart_toStartOf="@+id/ivShare"
-                app:layout_constraintTop_toTopOf="@+id/tvComment" />
+                app:layout_constraintTop_toTopOf="@+id/ivViews" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
