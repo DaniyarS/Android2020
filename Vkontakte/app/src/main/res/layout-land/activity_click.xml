@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ClickActivity">
 
+
+
     <TextView
         android:id="@+id/tvComment"
         android:layout_width="wrap_content"
@@ -141,6 +143,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="TextView"
+        android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="@+id/btMenu"
         app:layout_constraintStart_toStartOf="@+id/ivGroupPhoto"
         app:layout_constraintTop_toBottomOf="@+id/ivGroupPhoto" />

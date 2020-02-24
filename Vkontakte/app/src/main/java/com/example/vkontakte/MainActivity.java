@@ -1,11 +1,9 @@
 package com.example.vkontakte;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 
-import com.android.volley.toolbox.JsonArrayRequest;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -33,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Activity
 
         myContext = this;
 
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void recyclerViewStart(){
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);

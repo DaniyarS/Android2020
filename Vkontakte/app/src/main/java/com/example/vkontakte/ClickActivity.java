@@ -36,7 +36,7 @@ public class ClickActivity extends AppCompatActivity {
 
         String itvGroup = intent.getStringExtra("tvGroup");
         String itvTime = intent.getStringExtra("tvTime");
-        String itvTitle = intent.getStringExtra("tvTitle");
+        String itvTitle = intent.getStringExtra("tvHeading");
         String itvLikes = intent.getStringExtra("tvLikes");
         String itvComments = intent.getStringExtra("tvComments");
         String itvShares = intent.getStringExtra("tvShares");
@@ -61,4 +61,5 @@ public class ClickActivity extends AppCompatActivity {
         tvShares.setText(itvShares);
         tvViews.setText(itvViews);
     }
+
 }

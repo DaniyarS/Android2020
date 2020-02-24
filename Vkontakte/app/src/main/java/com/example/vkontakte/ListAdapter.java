@@ -93,8 +93,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 intent.putExtra("tvTime", tvTime);
                 intent.putExtra("tvViews", tvViews);
                 intent.putExtra("imgURL", imgURL);
+
+                context.startActivity(intent);
             }
+
         });
+
+
     }
 
     @Override
