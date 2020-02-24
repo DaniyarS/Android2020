@@ -18,15 +18,6 @@ public class ListItem {
     public void setShares(String shares) {
         this.shares = shares;
     }
-//    public ListItem(String groupName, String publishDate, String heading, String likes, String comments, String views, String imgURL) {
-//        this.groupName = groupName;
-//        this.publishDate = publishDate;
-//        this.heading = heading;
-//        this.likes = likes;
-//        this.comments = comments;
-//        this.views = views;
-//        this.imgURL = imgURL;
-//    }
 
     public void setGroupName(String groupName) {
         this.groupName = groupName;

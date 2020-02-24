@@ -1,6 +1,7 @@
 package com.example.vkontakte;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,27 +16,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
+
 import java.util.List;
 
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
-    private List<ListItem> listItems;
-    private Context context;
+    public List<ListItem> listItems;
+    public Context context;
 
     public ListAdapter(List<ListItem> listItems, Context context) {
         this.listItems = listItems;
         this.context = context;
     }
-
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
+    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType){
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_items, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
+    public void onBindViewHolder(final ViewHolder holder, int position){
         final ListItem listItem = listItems.get(position);
         holder.tvGroup.setText(listItem.getGroupName());
         holder.tvHeading.setText(listItem.getHeading());
@@ -53,17 +55,44 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 .load(listItem.getImgURL())
                 .into(holder.ivGroupPhoto);
 
-//        holder.cardView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view){
-//                Toast.makeText(context, "You clicked " + listItem.getGroupName(), Toast.LENGTH_LONG).show();
-//            }
-//        });
 
-        holder.iblikes.setOnClickListener(new View.OnClickListener() {
+        holder.ibLikes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
                 Toast.makeText(context, "You liked this post ", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClickListener(View v, int position) {
+                String tvGroup = listItems.get(position).getGroupName();
+                String tvHeading = listItems.get(position).getHeading();
+                String tvLikes = listItems.get(position).getLikes();
+                String tvComments = listItems.get(position).getComments();
+                String tvShares = listItems.get(position).getShares();
+                String tvTime = listItems.get(position).getPublishDate();
+                String tvViews = listItems.get(position).getViews();
+                String imgURL = listItems.get(position).getImgURL();
+
+                Picasso.with(context)
+                        .load(imgURL)
+                        .into(holder.ivPost);
+
+                Picasso.with(context)
+                        .load(imgURL)
+                        .into(holder.ivGroupPhoto);
+
+
+                Intent intent = new Intent(context, ClickActivity.class);
+                intent.putExtra("tvGroup", tvGroup);
+                intent.putExtra("tvHeading", tvHeading);
+                intent.putExtra("tvLikes", tvLikes);
+                intent.putExtra("tvComments", tvComments);
+                intent.putExtra("tvShares", tvShares);
+                intent.putExtra("tvTime", tvTime);
+                intent.putExtra("tvViews", tvViews);
+                intent.putExtra("imgURL", imgURL);
             }
         });
     }
@@ -73,35 +102,41 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         return listItems.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
-
-        public TextView tvGroup;
-        public TextView tvTime;
-        public TextView tvHeading;
-        public TextView tvLikes;
-        public TextView tvComments;
-        public TextView tvShares;
-        public TextView tvViews;
-        public ImageView ivPost;
-        public ImageView ivGroupPhoto;
-        public CardView cardView;
-        public ImageButton iblikes;
 
 
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        public ViewHolder(@NonNull View itemView) {
+        TextView tvGroup, tvTime, tvHeading, tvLikes, tvComments, tvShares, tvViews;
+        ImageView ivPost, ivGroupPhoto;
+        CardView cardView;
+        ImageButton ibLikes;
+        ItemClickListener itemClickListener;
+
+
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvGroup = (TextView) itemView.findViewById(R.id.tvGroup);
-            tvTime = (TextView) itemView.findViewById(R.id.tvTime);
-            tvHeading = (TextView) itemView.findViewById(R.id.tvHeading);
-            tvLikes = (TextView) itemView.findViewById(R.id.tvLikes);
-            tvComments = (TextView) itemView.findViewById(R.id.tvComment);
-            tvViews = (TextView) itemView.findViewById(R.id.tvViews);
-            ivPost = (ImageView) itemView.findViewById(R.id.ivPost);
-            ivGroupPhoto = (ImageView) itemView.findViewById(R.id.ivGroupPhoto);
-            cardView = (CardView) itemView.findViewById(R.id.cardView);
-            iblikes = (ImageButton) itemView.findViewById(R.id.iblike);
-            tvShares = (TextView) itemView.findViewById(R.id.tvShare);
+            tvGroup = itemView.findViewById(R.id.tvGroup);
+            tvTime =  itemView.findViewById(R.id.tvTime);
+            tvHeading =  itemView.findViewById(R.id.tvHeading);
+            tvLikes = itemView.findViewById(R.id.tvLikes);
+            tvComments =itemView.findViewById(R.id.tvComment);
+            tvViews = itemView.findViewById(R.id.tvViews);
+            ivPost = itemView.findViewById(R.id.ivPost);
+            ivGroupPhoto = itemView.findViewById(R.id.ivGroupPhoto);
+            cardView = itemView.findViewById(R.id.cardView);
+            ibLikes = itemView.findViewById(R.id.iblike);
+            tvShares = itemView.findViewById(R.id.tvShare);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            this.itemClickListener.onItemClickListener(v, getLayoutPosition());
+        }
+
+        public void setItemClickListener(ItemClickListener ic){
+            this.itemClickListener = ic;
         }
     }
 }
