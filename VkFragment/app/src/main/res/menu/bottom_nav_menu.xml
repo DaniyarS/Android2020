@@ -8,9 +8,22 @@
 
     <item
         android:id="@+id/nav_search"
-        android:icon="@drawable/ic_like"
+        android:icon="@drawable/ic_search_black_24dp"
         android:title="" />
 
+    <item
+        android:id="@+id/nav_message"
+        android:icon="@drawable/ic_chat_bubble_black_24dp"
+        android:title="" />
 
+    <item
+        android:id="@+id/nav_notification"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="" />
+
+    <item
+        android:id="@+id/nav_menu"
+        android:icon="@drawable/ic_menu_black_24dp"
+        android:title="" />
 
 </menu>
