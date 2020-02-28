@@ -1,4 +1,4 @@
-package com.example.vkontakte;
+package com.example.vkfragment;
 
 import android.content.Context;
 import android.os.Bundle;
