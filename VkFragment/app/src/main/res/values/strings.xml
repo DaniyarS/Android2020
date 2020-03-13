@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">"      Новости"</string>
-    <string name="title_home">Home</string>
+    <string name="app_name">VkFragment</string>
 </resources>
