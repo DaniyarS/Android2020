@@ -17,7 +17,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     private RecyclerView recyclerView;
 
@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView.Adapter adapter;
 
 
-
         recyclerViewStart();
         loadJSONFromAsset();
 
@@ -45,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             JSONObject obj = new JSONObject(loadJSONFromAsset());
             JSONArray array_post = obj.getJSONArray("posts");
 
-            for (int i = 0; i < array_post.length(); i++){
+            for (int i = 0; i < array_post.length(); i++) {
                 ListItem ls = new ListItem();
 
                 JSONObject jo_inside = array_post.getJSONObject(i);
@@ -60,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
                 String imgURL = jo_inside.getString("gImage");
 
 
-
                 ls.setGroupName(heading);
                 ls.setPublishDate(time);
                 ls.setHeading(title);
@@ -73,8 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
                 listItems.add(ls);
             }
-        }
-        catch (JSONException e){
+        } catch (JSONException e) {
             e.printStackTrace();
         }
         adapter = new ListAdapter(listItems, this);
@@ -83,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public  String loadJSONFromAsset()  {
+    public String loadJSONFromAsset() {
         String json;
         try {
 
@@ -108,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void recyclerViewStart(){
+    public void recyclerViewStart() {
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
